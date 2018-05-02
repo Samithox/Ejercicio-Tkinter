@@ -1,0 +1,21 @@
+import pymysql
+import mysql.connector
+
+db=mysql.connector.connect(user='Samithox',password='megagalaxia1',host='localhost',database='prueba')
+cursor = db.cursor()
+cursor.execute("INSERT INTO clientes (rutCliente,nombreCliente,apellidoCliente,ciudadCliente) VALUES ('207456732','Marcela Agustina','Paz Melendez','Concepcion')")
+
+db.commit()
+print("Se ha guardado exitosamente")
+db.close()
+print("Se ha desconectado de la base de datos")
+
+
+
+db = pymysql.connect('localhost','Samithox','megagalaxia1','prueba')
+ursor = db.cursor()
+insercion =cursor.execute("INSERT INTO clientes (rutCliente,nombreCliente,apellidoCliente,ciudadCliente) VALUES ('184567652','Juan Alberto','Machuca Rodriguez','Chillan')")
+bd.commit()
+consulta = cursor.execute("SELECT * FROM clientes")
+version =cursor.fetchone()
+print(version)
